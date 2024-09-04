@@ -39,7 +39,7 @@ final int maxlines;
       borderRadius: BorderRadius.circular(14),
   borderSide:  BorderSide(
   color:color?? Colors.white,
-  width: 2)
+  width: 1)
       );
   }
 }
