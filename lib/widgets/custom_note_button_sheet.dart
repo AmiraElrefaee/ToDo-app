@@ -11,11 +11,21 @@ class AddNoteBottonSheet extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
-        children: [
+        children:const [
           SizedBox(
             height: 32,
           ),
-          CustomTextgFiled(),
+          CustomTextgFiled(
+            hint: 'Title',
+
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          CustomTextgFiled(
+            hint: 'content',
+            maxlines: 5,
+          ),
         ],
       ),
     );

@@ -4,17 +4,19 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class CustomTextgFiled extends StatelessWidget {
-  const CustomTextgFiled({super.key});
-
+  const CustomTextgFiled({super.key, required this.hint, this.maxlines=1});
+final String hint;
+final int maxlines;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxlines,
       style: TextStyle(
         fontSize: 25
       ),
       cursorColor: kprimaryColor,
       decoration: InputDecoration(
-        hintText: 'Title',
+        hintText:hint,
         hintStyle: TextStyle(
           color: kprimaryColor
         ),
