@@ -17,14 +17,14 @@ class AddNoteBottonSheet extends StatelessWidget {
             SizedBox(
               height: 32,
             ),
-            CustomTextgFiled(
+            CustomTextFiled(
               hint: 'Title',
 
             ),
             SizedBox(
               height: 20,
             ),
-            CustomTextgFiled(
+            CustomTextFiled(
               hint: 'content',
               maxlines: 5,
             ),

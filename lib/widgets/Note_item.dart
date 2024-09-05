@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../views/edit_note_view.dart';
 import 'Edit_view_body.dart';
 
 class NotemItem extends StatelessWidget {
@@ -12,7 +13,7 @@ class NotemItem extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return const  EditViewBody();
+          return const  EditNoteView();
         }));
       },
       child: Container(

@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../constants.dart';
 
-class CustomTextgFiled extends StatelessWidget {
-  const CustomTextgFiled({super.key, required this.hint, this.maxlines=1});
+class CustomTextFiled extends StatelessWidget {
+  const CustomTextFiled({super.key, required this.hint, this.maxlines=1});
 final String hint;
 final int maxlines;
   @override
@@ -39,7 +39,7 @@ final int maxlines;
       borderRadius: BorderRadius.circular(14),
   borderSide:  BorderSide(
   color:color?? Colors.white,
-  width: 1)
+  width: 2)
       );
   }
 }
