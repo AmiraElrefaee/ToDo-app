@@ -22,7 +22,7 @@ class EditViewBody extends StatelessWidget {
             icon:Icons.check,
           ),
       SizedBox(
-        height: 32,
+        height: 50,
       ),
       CustomTextFiled(
         hint: 'Title',
