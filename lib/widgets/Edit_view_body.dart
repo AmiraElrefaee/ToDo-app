@@ -24,14 +24,14 @@ class EditViewBody extends StatelessWidget {
       SizedBox(
         height: 50,
       ),
-      CustomTextFiled(
+          CustomTextField(
         hint: 'Title',
 
       ),
       SizedBox(
         height: 20,
       ),
-      CustomTextFiled(
+          CustomTextField(
         hint: 'content',
         maxlines: 5,
       ),
