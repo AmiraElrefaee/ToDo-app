@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'Custom_bottom.dart';
+import 'Custom_botton.dart';
 import 'custom_text_field.dart';
 
 class addNoteForm extends StatefulWidget {

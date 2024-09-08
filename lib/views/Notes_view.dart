@@ -7,7 +7,7 @@ import 'package:notes_application/constants.dart';
 
 
 import '../widgets/Notes_view_body.dart';
-import '../widgets/custom_note_button_sheet.dart';
+import '../widgets/custom_note_buttom_sheet.dart';
 
 class NotesView extends StatelessWidget {
   const NotesView({super.key});
