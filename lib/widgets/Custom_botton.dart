@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:notes_application/constants.dart';
 
 class CustomBottom extends StatelessWidget {
-   CustomBottom({super.key, this.onTap});
+   CustomBottom({super.key, this.onTap,  this.isLoading=false});
 final void Function()? onTap;
+final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,8 +17,14 @@ final void Function()? onTap;
           borderRadius: BorderRadius.circular(16),
           color: kprimaryColor,
         ),
-        child: const Center(
-          child: Text('Add',
+        child: Center(
+          child:isLoading?SizedBox(
+            height: 30,
+            width: 30,
+            child: CircularProgressIndicator(
+              color: Colors.black,
+            ),
+          ): Text('Add',
           style: TextStyle(
             color: Colors.black,
             fontSize: 27,
