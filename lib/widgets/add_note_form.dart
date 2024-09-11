@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_application/add_note_cubit/add_note_cubit.dart';
 import 'package:notes_application/models/note_model.dart';
 
+import '../notes_cubit/notes_cubit.dart';
 import 'Custom_botton.dart';
 import 'custom_text_field.dart';
 
@@ -62,6 +63,10 @@ class _addNoteFormState extends State<addNoteForm> {
                         date: DateTime.now().toString(),
                         color: Colors.brown.value);
                     BlocProvider.of<AddNoteCubit>(context).addNote(notModel);
+                    print(5);
+                    // BlocProvider.of<NotesCubit>(context).fetchAllNote();
+
+
                   } else {
                     autovalidateMode = AutovalidateMode.always;
                     setState(() {
