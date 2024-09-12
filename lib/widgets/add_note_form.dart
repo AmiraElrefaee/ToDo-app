@@ -8,6 +8,8 @@ import 'package:notes_application/models/note_model.dart';
 
 import '../notes_cubit/notes_cubit.dart';
 import 'Custom_botton.dart';
+import 'color_item.dart';
+import 'colors_list_view.dart';
 import 'custom_text_field.dart';
 
 class addNoteForm extends StatefulWidget {
@@ -51,7 +53,12 @@ class _addNoteFormState extends State<addNoteForm> {
             hint: 'content',
             maxlines: 5,
           ),
-          const SizedBox(height: 100,),
+
+
+          SizedBox(
+              height: 80,
+              child: ColorsListView()),
+          const SizedBox(height: 40,),
           BlocBuilder<AddNoteCubit, AddNoteState>(
             builder: (context, state) {
               return CustomBottom(
@@ -59,16 +66,7 @@ class _addNoteFormState extends State<addNoteForm> {
                 onTap: () {
                   if (formKey.currentState!.validate()) {
                     formKey.currentState!.save();
-                    DateTime now=DateTime.now();
-                    String formattedDay=DateFormat('yyy-MM-dd').format(now);
-                    var notModel = NoteModel(title: title!,
-                        subTitle: subTitle!,
-                        date: formattedDay,
-                        color: Colors.brown.value);
-                    BlocProvider.of<AddNoteCubit>(context).addNote(notModel);
-                    print(5);
-                    // BlocProvider.of<NotesCubit>(context).fetchAllNote();
-
+                    saveNote(context);
 
                   } else {
                     autovalidateMode = AutovalidateMode.always;
@@ -86,6 +84,16 @@ class _addNoteFormState extends State<addNoteForm> {
         ],
       ),
     );
+  }
+
+  void saveNote(BuildContext context) {
+     DateTime now=DateTime.now();
+    String formattedDay=DateFormat('yyy-MM-dd').format(now);
+    var notModel = NoteModel(title: title!,
+        subTitle: subTitle!,
+        date: formattedDay,
+        color: Colors.brown.value);
+    BlocProvider.of<AddNoteCubit>(context).addNote(notModel);
   }
 }
 
