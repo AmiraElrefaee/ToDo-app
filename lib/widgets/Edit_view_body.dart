@@ -1,43 +1,68 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:notes_application/models/note_model.dart';
+import 'package:notes_application/notes_cubit/notes_cubit.dart';
 import 'package:notes_application/widgets/custem_appBar.dart';
 
 import 'custom_note_buttom_sheet.dart';
 import 'custom_text_field.dart';
 
-class EditViewBody extends StatelessWidget {
-  const EditViewBody({super.key});
+class EditViewBody extends StatefulWidget {
+  const EditViewBody({super.key, required this.note});
+final NoteModel note;
+
+  @override
+  State<EditViewBody> createState() => _EditViewBodyState();
+}
+
+class _EditViewBodyState extends State<EditViewBody> {
+ String ?title, subTitle;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24),
+      padding:  EdgeInsets.symmetric(horizontal: 24),
       child: Column(
         children: [
-          SizedBox(
+        const  SizedBox(
             height: 50,
           ),
           CustomAppBar(
+            onPressed: (){
+              widget.note.title= title ??widget.note.title;
+              widget.note.subTitle =subTitle ?? widget.note.subTitle;
+              widget.note.save();
+              BlocProvider.of<NotesCubit>(context).fetchAllNote();
+              Navigator.pop(context);
+            },
             title: 'Edit Note',
             icon:Icons.check,
           ),
-      SizedBox(
+          const SizedBox(
         height: 50,
       ),
           CustomTextField(
-        hint: 'Title',
+
+            onChanged: (value){
+              title=value;
+            },
+        hint: widget.note.title,
 
       ),
-      SizedBox(
+          const SizedBox(
         height: 20,
       ),
           CustomTextField(
-        hint: 'content',
+            onChanged: (value){
+              subTitle=value;
+            },
+        hint: widget.note.subTitle,
         maxlines: 5,
       ),
-      SizedBox(height: 100,),
+          const  SizedBox(height: 100,),
 
-      SizedBox(
+          const  SizedBox(
         height: 20,)
         ],
       ),

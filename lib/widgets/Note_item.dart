@@ -1,7 +1,10 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:notes_application/models/note_model.dart';
+import 'package:notes_application/notes_cubit/notes_cubit.dart';
 
 import '../views/edit_note_view.dart';
 import 'Edit_view_body.dart';
@@ -15,7 +18,7 @@ class NotemItem extends StatelessWidget {
     return GestureDetector(
       onTap: (){
         Navigator.push(context, MaterialPageRoute(builder: (context){
-          return const  EditNoteView();
+          return   EditNoteView(note:noteModel);
         }));
       },
       child: Container(
@@ -46,6 +49,8 @@ class NotemItem extends StatelessWidget {
               trailing: IconButton(
                 onPressed: (){
                   noteModel.delete();
+                  // BlocProvider.of<NotesCubit(context).fetchAllNote();
+                  BlocProvider.of<NotesCubit>(context).fetchAllNote();
                 },
                 icon: Icon(
                   FontAwesomeIcons.trash,
