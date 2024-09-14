@@ -5,6 +5,10 @@ import 'package:notes_application/models/note_model.dart';
 import 'package:notes_application/notes_cubit/notes_cubit.dart';
 import 'package:notes_application/widgets/custem_appBar.dart';
 
+import '../constants.dart';
+import 'Edit_color_list_view.dart';
+import 'color_item.dart';
+import 'colors_list_view.dart';
 import 'custom_note_buttom_sheet.dart';
 import 'custom_text_field.dart';
 
@@ -60,10 +64,15 @@ class _EditViewBodyState extends State<EditViewBody> {
         hint: widget.note.subTitle,
         maxlines: 5,
       ),
-          const  SizedBox(height: 100,),
+          SizedBox(height: 10,),
+           EditNoteColorList(
+           note: widget.note,
+         ),
+          // SizedBox(
+          //     height: 80,
+          //     child: ColorsListView()),
 
-          const  SizedBox(
-        height: 20,)
+
         ],
       ),
     );
