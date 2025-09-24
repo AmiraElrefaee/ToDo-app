@@ -19,4 +19,5 @@ A simple ToDo app built with Flutter, featuring 3 screens and local storage usin
 3. **Task Details Screen**: View details of a task, mark as complete or delete.
 
 ## Demo Video
-[Uploading todo app.webm…]()
+
+[todo app.webm](https://github.com/user-attachments/assets/0c55c855-8f8d-4dea-82ae-8197232456ef)
