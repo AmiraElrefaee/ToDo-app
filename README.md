@@ -1,16 +1,22 @@
-# notes_application
+# ToDo App
 
-A new Flutter project.
+A simple ToDo app built with Flutter, featuring 3 screens and local storage using Hive.
 
-## Getting Started
+## Features
+- View list of tasks
+- Add a new task
+- View task details
+- Mark task as completed
+- Delete task
+- Local storage using Hive (tasks persist after app is closed)
 
-This project is a starting point for a Flutter application.
+## Screens / Features
 
-A few resources to get you started if this is your first Flutter project:
+1. **Task List Screen**: Shows all tasks with their status.
+2. **Add Task**: A task can be added using a Bottom Sheet from the Task List screen.
+   - Enter task title and optional details.
+   - Press Save to add the task.
+3. **Task Details Screen**: View details of a task, mark as complete or delete.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Demo Video
+[Uploading todo app.webm…]()
