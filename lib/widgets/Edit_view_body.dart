@@ -49,7 +49,9 @@ class _EditViewBodyState extends State<EditViewBody> {
           CustomTextField(
 
             onChanged: (value){
+              // value=widget.note.title;
               title=value;
+
             },
         hint: widget.note.title,
 

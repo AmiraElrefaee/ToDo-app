@@ -32,6 +32,14 @@ class NotemItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             ListTile(
+              leading: Checkbox(
+                value: noteModel.isCompleted,
+                onChanged: (value) {
+                  noteModel.isCompleted = value ?? false;
+                  noteModel.save(); // 👈 يحفظ الحالة في Hive
+                  BlocProvider.of<NotesCubit>(context).fetchAllNote();
+                },
+              ),
               title: Text(noteModel.title,
               style: TextStyle(
                 color: Colors.black,
